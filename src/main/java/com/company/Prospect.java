@@ -6,12 +6,14 @@ public class Prospect {
     private double loan;
     private double interest;
     private int years;
+    private double monthlyPayment;
 
     public Prospect (String name, double loan, double interest, int years) {
         setName(name);
         setLoan(loan);
         setInterest(interest);
         setYears(years);
+        setMonthlyPayment(getLoan(), getInterest(), getYears());
 
     }
 
@@ -45,5 +47,13 @@ public class Prospect {
 
     public int getYears() {
         return years;
+    }
+
+    public void setMonthlyPayment(double loan, double interest, int years) {
+        this.monthlyPayment = Utils.calculatePayment(loan, interest, years);
+    }
+
+    public double getMonthlyPayment() {
+        return monthlyPayment;
     }
 }

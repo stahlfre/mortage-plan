@@ -22,12 +22,13 @@ public class Main {
 
         }
         for (int i = 0; i < prospectList.size(); i++) {
-            System.out.printf("Prospect %d: %s wants to borrow %.2f for a period of %d years and pay (interest) %.2f € each month\n",
+            System.out.printf("Prospect %d: %s wants to borrow %.2f at %.2f%% for a period of %d years and pay %.2f € each month\n",
                     i+1,
                     prospectList.get(i).getName(),
                     prospectList.get(i).getLoan(),
+                    prospectList.get(i).getInterest(),
                     prospectList.get(i).getYears(),
-                    prospectList.get(i).getInterest());
+                    prospectList.get(i).getMonthlyPayment());
 
         }
 

@@ -20,15 +20,16 @@ public class FileUtils {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-
-                if (!line.isEmpty() && line.charAt(0) == '\"') {
-                    String snip = line.substring(0,line.lastIndexOf('\"')).replaceAll("[^\\p{L}]", " ").strip()
-                            + line.substring(line.lastIndexOf('\"')+1);
-                    listOfStrings.add(snip);
-
-                } else if(line.length() > 6) {
-                    listOfStrings.add(line);
+                if (!line.replaceAll("[^\\p{L}0-9]", "").equals("")) {
+                    if (!line.isEmpty() && line.charAt(0) == '\"') {
+                        String snip = line.substring(0,line.lastIndexOf('\"')).replaceAll("[^\\p{L}]", " ").strip()
+                                + line.substring(line.lastIndexOf('\"')+1);
+                        listOfStrings.add(snip);
+                    } else {
+                        listOfStrings.add(line);
+                    }
                 }
+
 
             }
 
