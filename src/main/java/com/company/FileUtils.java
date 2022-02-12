@@ -11,7 +11,7 @@ public class FileUtils {
 
     public static List<String> readFile(String fileName) {
 
-        List<String> listOfStrings = new ArrayList<String>();
+        List<String> listOfStrings = new ArrayList<>();
 
         try {
             FileInputStream inputStream = new FileInputStream(fileName);

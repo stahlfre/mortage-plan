@@ -7,12 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List prospects = FileUtils.readFile("prospects.txt");
+        List<String> prospects = FileUtils.readFile("prospects.txt");
         List<Prospect> prospectList = new ArrayList<>();
 
         for (int i = 1; i < prospects.size(); i++) {
             System.out.println(prospects.get(i));
-            String[] test = prospects.get(i).toString().split(",");
+            String[] test = prospects.get(i).split(",");
             /*for (int j = 0; j < test.length; j++) {
                 System.out.println(test[j]);
             }*/
