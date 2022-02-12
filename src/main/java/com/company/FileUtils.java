@@ -5,13 +5,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FileUtils {
 
-    public static List<String> readFile(String fileName) {
+    public static ArrayList<String> readFile(String fileName) {
 
-        List<String> listOfStrings = new ArrayList<>();
+        ArrayList<String> listOfStrings = new ArrayList<>();
 
         try {
             FileInputStream inputStream = new FileInputStream(fileName);
@@ -29,8 +28,6 @@ public class FileUtils {
                         listOfStrings.add(line);
                     }
                 }
-
-
             }
 
             bufferedReader.close();
